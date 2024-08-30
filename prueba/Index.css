@@ -1,0 +1,67 @@
+body{
+background-color:#002A3A;
+color: white
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    align-items: center;
+    justify-items: center;
+}
+
+li {
+    margin-bottom: 8px;
+    display: grid;
+}
+
+h1 {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 20px;
+}
+div{
+    margin-top: auto !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    height: 100vh;
+}
+
+.InfiniteScrollContainer{
+    margin-top: 200px;
+    height: 35em !important;
+    width: 110vh !important;
+    display:ruby;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+}
+
+.Botones{
+    align-items: center;
+}
+.BotonFinal{
+    margin-bottom: 50px !important;
+    margin-top: 10px !important;
+    align-items: center !important;
+}
+
+.title{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+
+@media (max-width: 1024px){
+    .title{
+        margin: auto;
+        width: 300px !important;
+        font-size: 30px !important;
+    }
+    .InfiniteScrollContainer{
+        display: grid;
+        width: 50em;
+    }
+}
