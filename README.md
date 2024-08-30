@@ -1,5 +1,6 @@
-Api key: d919a40d-32b3-4107-a974-df10a34297a6
-“X-API-Key”
+Utilizar Npm Install, utilice npm create vite@latest con un plugin de react Plugin de vite npm install @vitejs/plugin-react-E
+npm install react react-doom -E
+npm install standard -D
 
 Requisitos funcionales
 Una empresa pide desarrollar un sistema que recomiende productos para sus 
