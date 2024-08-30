@@ -2,6 +2,12 @@ Utilizar Npm Install, utilice npm create vite@latest con un plugin de react Plug
 npm install react react-doom -E
 npm install standard -D
 
+Boostrap
+Farmer Motion  npm install framer-motion
+Mui  npm install @mui/material @emotion/react @emotion/styled
+font awesome
+
+
 Requisitos funcionales
 Una empresa pide desarrollar un sistema que recomiende productos para sus 
 clientes, de tal forma que los clientes puedan obtener recomendaciones del catálogo
