@@ -5,7 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import "../Index.css"
-import { FirstEndPoint } from "./Endpoints";
+import { FirstEndPoint } from "./FetchEndpoints";
 import { motion } from "framer-motion"
 
 const iconMap = {

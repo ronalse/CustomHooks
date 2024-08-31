@@ -5,7 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import "../Index.css"
-import { SecondEndpoint } from './Endpoints';
+import { SecondEndpoint } from './FetchEndpoints';
 import { motion } from "framer-motion"
 
 export const Second = ({setIdSubcategory, idCategory}) => {

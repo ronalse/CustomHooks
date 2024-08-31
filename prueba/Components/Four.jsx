@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import "../Index.css";
-import { FourEndpoint } from './Endpoints';
+import { FourEndpoint } from './FetchEndpoints';
 import { motion } from "framer-motion"
 
 
