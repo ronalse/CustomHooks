@@ -7,7 +7,7 @@ import {Four} from './Components/Four.jsx';
 import "./Index.css"
 
 
-export const Index = () => {
+export const App = () => {
   const [idCategory, setIdCategory] = useState({});
   const [idSubcategory, setIdSubcategory] = useState({});
   const [idColor, setIdColor] = useState({});

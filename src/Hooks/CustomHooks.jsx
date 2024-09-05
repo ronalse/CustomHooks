@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 export const useFirstQuestion = () =>{
-    const [FirstQuestion, setFirstQuestion] = useState([]);
+    const [FirstQuestion, setFirstQuestion] = useState({});
     useEffect(() => {
         FirstEndPoint().then(setFirstQuestion);
     }, []);
@@ -16,7 +16,7 @@ export const useFirstQuestion = () =>{
 
 export const useSecondQuestion = ({idCategory}) =>{
     const navigate = useNavigate();
-    const [SecondQuestion, setSecondQuestion] = useState([]);
+    const [SecondQuestion, setSecondQuestion] = useState({});
     const {id} = useParams();
     useEffect( ()=>{
         if (id && Object.keys(idCategory).length > 0){
@@ -35,7 +35,7 @@ return {SecondQuestion }
 }
 
 export const useThirdQuestion = ({idSubcategory}) =>{
-    const [ThirdQuestion, setThirdQuestion] = useState([])
+    const [ThirdQuestion, setThirdQuestion] = useState({})
     const { id } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
@@ -73,7 +73,7 @@ export const useThirdQuestion = ({idSubcategory}) =>{
 
 export const useFinalQuestion = ({ idCategory, idSubcategory, idColor, filter }) => {
     const { FourQuestion } = useFourQuestion({ idCategory, idSubcategory, idColor });
-    const [finalQuestion, setFinalQuestion] = useState([]);
+    const [finalQuestion, setFinalQuestion] = useState({});
 
     useEffect(() => {
         if (FourQuestion.length > 0) {
