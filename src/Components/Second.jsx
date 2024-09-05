@@ -5,26 +5,18 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import "../Index.css"
-import { SecondEndpoint } from './FetchEndpoints';
+import { SecondEndpoint } from '../fetch/FetchEndpoints';
 import { motion } from "framer-motion"
+import {useSecondQuestion} from "../Hooks/CustomHooks"
+
+
 
 export const Second = ({setIdSubcategory, idCategory}) => {
+    const {SecondQuestion} = useSecondQuestion({idCategory});
     const {id} = useParams();
-    const [SecondQuestion, setSecondQuestion] = useState([]);
     const navigate = useNavigate();
     const [fadeOut, setFadeOut] = useState(false);
 
-    useEffect( ()=>{
-            if (id && Object.keys(idCategory).length > 0){
-                SecondEndpoint(id).then(setSecondQuestion)
-                console.log(idCategory)
-            }else{
-                console.log("error id no encontrado", id);
-                alert("error no se encontro nada");
-                navigate("/");
-                console.log(idCategory)
-            }
-    },[id, idCategory])
 
     const handleSubcategoryClick = (id, name) => {
         setFadeOut(true);

@@ -5,9 +5,9 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import "../Index.css"
-import { FirstEndPoint } from "./FetchEndpoints";
+import { FirstEndPoint } from "../fetch/FetchEndpoints";
 import { motion } from "framer-motion"
-
+import { useFirstQuestion } from "../Hooks/CustomHooks";
 const iconMap = {
     'Electrónica': 'fa-microchip',
     'Ropa': 'fa-tshirt', 
@@ -15,16 +15,12 @@ const iconMap = {
     'Deportes': 'fa-running' 
 };
 
+
 export const First = ({ setIdCategory }) => {
-    const [FirstQuestion, setFirstQuestion] = useState([]);
+    const {FirstQuestion} = useFirstQuestion();
     const [fadeOut, setFadeOut] = useState(false);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        FirstEndPoint().then(setFirstQuestion);
-    }, []);
-
-    
     const handleCategoryClick = (id, name) => {
         setFadeOut(true); 
         setTimeout(() => {
@@ -32,6 +28,7 @@ export const First = ({ setIdCategory }) => {
             navigate(`/subcategory/${id}`);
         }, 500); 
     };
+
     const Titulo = "Hola, para ayudarte con la búsqueda, realicemos una serie de pasos, con los cuales podremos crear un filtro y simplificar la búsqueda.";
 
     return (

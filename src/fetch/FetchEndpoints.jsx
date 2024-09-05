@@ -1,4 +1,3 @@
-
 const apiKey = "d919a40d-32b3-4107-a974-df10a34297a6"
 
 export const FirstEndPoint = async () => {
@@ -21,9 +20,6 @@ export const FirstEndPoint = async () => {
     }
 
 };
-
-
-
 export const SecondEndpoint = async (id) =>{
     const myHeaders = new Headers();
     myHeaders.append("X-API-Key", apiKey);

@@ -1,31 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, {useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import "../Index.css"
-import { ThirdEndpoint } from './FetchEndpoints';
 import { motion } from "framer-motion"
+import { useThirdQuestion } from '../Hooks/CustomHooks';
+
 
 export const Third = ({setIdColor , idSubcategory}) =>{
-    const { id } = useParams();
-    const [ThirdQuestion, setThirdQuestion] = useState([])
+    const {ThirdQuestion} = useThirdQuestion({idSubcategory})
     const navigate = useNavigate();
     const [fadeOut, setFadeOut] = useState(false);
-
-    useEffect(() => {
-      if (id && Object.keys(idSubcategory).length > 0) {
-          ThirdEndpoint(id).then(setThirdQuestion);
-          console.log(idSubcategory);
-      } else {
-          console.error("Error: id no encontrado o idSubcategory es un array vacío", id);
-          navigate("/");
-          alert("Error: No se encontraron subcategorías válidas.");
-          
-      }
-  }, [id, idSubcategory])
-
 
 const handleColorClick = (id, name) => {
     setFadeOut(true);
