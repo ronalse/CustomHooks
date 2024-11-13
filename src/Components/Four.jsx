@@ -49,6 +49,7 @@ export const Four = ({ idCategory, idSubcategory, idColor }) => {
             >
                 Regresar 
             </Button>
+            <span>filtrar por envio gratuito</span>
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                     onClick={HandleFilter}
             />

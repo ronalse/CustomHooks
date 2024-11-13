@@ -31,7 +31,7 @@ div{
 }
 
 .InfiniteScrollContainer{
-    margin-top: 200px;
+    margin-top: 10px !important;
     height: 35em !important;
     width: 110vh !important;
     display:ruby;
@@ -49,8 +49,8 @@ div{
 }
 
 .title{
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 
@@ -87,4 +87,8 @@ div{
 
 	animation-timeline: --reveal;
 	animation-range: entry 25% cover 50%;
+}
+
+#flexCheckDefault {
+    margin-bottom: 5px !important;
 }
