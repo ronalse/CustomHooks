@@ -8,6 +8,7 @@ import "../Index.css"
 import { FirstEndPoint } from "../fetch/FetchEndpoints";
 import { motion } from "framer-motion"
 import { useFirstQuestion } from "../Hooks/CustomHooks";
+import { Top } from "./Top";
 const iconMap = {
     'Electrónica': 'fa-microchip',
     'Ropa': 'fa-tshirt', 
@@ -31,7 +32,7 @@ export const First = ({ setIdCategory }) => {
 
     const Titulo = "Hola, para ayudarte con la búsqueda, realicemos una serie de pasos, con los cuales podremos crear un filtro y simplificar la búsqueda.";
 
-    return (
+    return ( 
         <motion.div
 		onClick={(e) => e.stopPropagation()}
 		initial={{ y: -50, opacity: 0 }}
@@ -39,6 +40,7 @@ export const First = ({ setIdCategory }) => {
 		exit={{ y: 50, opacity: 0 }}
 		transition={{ duration: 0.5 }}>
         <div className="container">
+                <Top/>
             <h1>{Titulo}</h1>
             <h1>Selecciona una Opcion :</h1>
         <Fade in={!fadeOut} timeout={500}>
