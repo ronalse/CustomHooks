@@ -1,0 +1,36 @@
+{
+    "es": {
+      "title": "Hola, para ayudarte con la búsqueda, realicemos una serie de pasos, con los cuales podremos crear un filtro y simplificar la búsqueda.",
+      "selectOption": "Selecciona una Opción :",
+      "language": "Cambiar Idioma",
+      "back": "Regresar",
+      "recommendations": "Recomendaciones de",
+      "color": "color",
+      "selectOne": "Selecciona uno",
+      "goBack": "regresa al inicio",
+      "filterFreeShipping": "filtrar por envio gratuito",
+      "price": "Precio",
+      "shipping": "Envio",
+      "yes": "Si",
+      "no": "No",
+      "available": "Disponibles",
+      "error": "algo salio mal, intentalo mas tarde"
+    },
+    "en": {
+      "title": "Hello, to help you with the search, let's go through a series of steps, with which we can create a filter and simplify the search.",
+      "selectOption": "Select an Option :",
+      "language": "Change Language",
+      "back": "Back",
+      "recommendations": "Recommendations for",
+      "color": "color",
+      "selectOne": "Select one",
+      "goBack": "go back to the start",
+      "filterFreeShipping": "filter by free shipping",
+      "price": "Price",
+      "shipping": "Shipping",
+      "yes": "Yes",
+      "no": "No",
+      "available": "Available",
+      "error": "something went wrong, try again later"
+    }
+  }

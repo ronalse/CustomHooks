@@ -8,7 +8,7 @@ import "../Index.css"
 import { SecondEndpoint } from '../fetch/FetchEndpoints';
 import { motion } from "framer-motion"
 import {useSecondQuestion} from "../Hooks/CustomHooks"
-
+import { useLanguage } from './LanguageContext.jsx';
 
 
 export const Second = ({setIdSubcategory, idCategory}) => {
@@ -16,7 +16,7 @@ export const Second = ({setIdSubcategory, idCategory}) => {
     const {id} = useParams();
     const navigate = useNavigate();
     const [fadeOut, setFadeOut] = useState(false);
-
+    const { language, translations } = useLanguage();
 
     const handleSubcategoryClick = (id, name) => {
         setFadeOut(true);
@@ -38,12 +38,12 @@ export const Second = ({setIdSubcategory, idCategory}) => {
           exit={{ y: 50, opacity: 0 }}
           transition={{ duration: 0.5 }}>
       <div className="container">
-          <h1>Selecciona una opcion de {idCategory.name} para seguir adelante</h1>
+      <h1>{translations[language].selectOption} {idCategory.name}</h1>
           <Button className='BotonFinal'
                   variant="contained"
                   onClick={handleBack}
               >
-                  Regresar 
+                 {translations[language].back}
           </Button>
       <Fade in={!fadeOut} timeout={500}>
         <ul>

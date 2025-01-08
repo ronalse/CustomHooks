@@ -97,6 +97,4 @@ div{
     height: auto; /* Ajusta la altura automáticamente según el contenido */
     margin-top: 200px !important;
     margin-bottom: 50px !important;
-    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo de la altura */
-    border: 1px solid red; /* Añade un borde temporal para visualizar el contenedor */
 }

@@ -7,13 +7,13 @@ import Fade from '@mui/material/Fade';
 import "../Index.css"
 import { motion } from "framer-motion"
 import { useThirdQuestion } from '../Hooks/CustomHooks';
-
+import { useLanguage } from './LanguageContext.jsx';
 
 export const Third = ({setIdColor , idSubcategory}) =>{
     const {ThirdQuestion} = useThirdQuestion({idSubcategory})
     const navigate = useNavigate();
     const [fadeOut, setFadeOut] = useState(false);
-
+    const { language, translations } = useLanguage();
 const handleColorClick = (id, name) => {
     setFadeOut(true);
     setTimeout(() => {
@@ -33,12 +33,12 @@ const handleColorClick = (id, name) => {
           exit={{ y: 50, opacity: 0 }}
           transition={{ duration: 0.5 }}>
     <div>
-      <h1>Elije un color de {idSubcategory.name}</h1>
+    <h1>{translations[language].selectOption} {idSubcategory.name}</h1>
       <Button className='BotonFinal'
                 variant="contained"
                 onClick={() =>handleBack(idSubcategory.id)}
             >
-                Regresa al inicio 
+                {translations[language].back} 
         </Button>
       <Fade in={!fadeOut} timeout={500}>
       <ul> 

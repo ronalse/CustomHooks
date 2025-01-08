@@ -6,14 +6,14 @@ import Box from '@mui/material/Box';
 import "../Index.css";
 import { useFinalQuestion } from '../Hooks/CustomHooks';
 import { motion } from "framer-motion"
-
+import { useLanguage } from './LanguageContext.jsx';
 // is_free_shipping : name for free delivery
 
 export const Four = ({ idCategory, idSubcategory, idColor }) => {
     const navigate = useNavigate();
     const [filter, setFilter] = useState(true)
     const { finalQuestion } = useFinalQuestion({ idCategory, idSubcategory, idColor, filter });
-    
+    const { language, translations } = useLanguage();
 
     const handleBack = () => {
             navigate("/");
@@ -36,20 +36,20 @@ export const Four = ({ idCategory, idSubcategory, idColor }) => {
         <div>
             {idCategory.name ? (
             <>
-            <h1 className='title'>Recomendaciones de {idCategory.name}: {idSubcategory.name} color {idColor.name}</h1>
+            <h1 className='title'>{translations[language].recommendations} {idCategory.name}: {idSubcategory.name} {translations[language].color} {idColor.name}</h1>
             <br></br>
-            <h2>Selecciona uno</h2>
+            <h2>{translations[language].selectOne}</h2>
             </>) : (
-                <span>regresa al inicio</span>
+                <span>{translations[language].goBack}</span>
             )}
             
             <Button className='BotonFinal'
                 variant="contained"
                 onClick={handleBack}
             >
-                Regresar 
+                {translations[language].back} 
             </Button>
-            <span>filtrar por envio gratuito</span>
+            <span>{translations[language].filterFreeShipping}</span>
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                     onClick={HandleFilter}
             />
@@ -61,11 +61,11 @@ export const Four = ({ idCategory, idSubcategory, idColor }) => {
                                 <div className="card-body d-flex flex-column">
                                     <h5 className="card-title">{optionFour.name}</h5>
                                     <h6 className="card-subtitle mb-2 text-muted">
-                                        Precio: {optionFour.price} euros
+                                        {translations[language].price}: {optionFour.price} euros
                                     </h6>
                                     <p className="card-text">
-                                        Envio: {optionFour.is_free_shipping ? "Si" : "No"} <br />
-                                        Disponibles: {optionFour.stock_quantity}
+                                        {translations[language].shipping}: {optionFour.is_free_shipping ? translations[language].yes : translations[language].no} <br />
+                                        {translations[language].available}: {optionFour.stock_quantity}
                                     </p>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ export const Four = ({ idCategory, idSubcategory, idColor }) => {
                     ))
                 ) : (
                     <Box sx={{ display: 'flex' }}>
-                        <p>algo salio mal, intentalo mas tarde</p>
+                        <p>{translations[language].error}</p>
                         <CircularProgress />
                     </Box>
                 )}
